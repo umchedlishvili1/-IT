@@ -1,184 +1,164 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8">
-            <style>
-                body{font-family:system-ui,-apple-system,sans-serif; background:#f8fafc; padding:20px; display:flex; justify-content:center;}
-                #canvas{width:100%; max-width:720px; background:white; border-radius:45px; padding:35px; box-shadow:0 30px 60px rgba(0,0,0,0.1);}
-                .live-banner{background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%); color:white; padding:30px; border-radius:35px; text-align:center; margin-bottom:25px;}
-                .big-date{font-size:42px; font-weight:900; color:#0ea5e9; margin-bottom:8px;}
-                .live-name{font-size:24px; font-weight:800; margin-bottom:5px;}
-                .priority-box{display:grid; grid-template-columns:1fr 1fr 1fr; gap:15px; margin-bottom:20px;}
-            </style></head>
-            <body>
-                <div id="canvas">
-                    <div class="live-banner">
-                        <div class="big-date">18 თებერვალი</div>
-                        <div class="live-name">ალიკა ყალიჩავა</div>
-                        <div style="font-size:30px; color:#0ea5e9; font-weight:900; margin:10px 0;">551688899</div>
-                        <div style="display:flex; gap:15px; justify-content:center; margin-top:15px;">
-                            <a href="tel:551688899" style="background:#16a34a; color:white; text-decoration:none; padding:12px 25px; border-radius:15px; font-weight:800;">📞 CALL</a>
-                            <a href="viber://chat?number=%2B995551688899" style="background:#7360f2; color:white; text-decoration:none; padding:12px 25px; border-radius:15px; font-weight:800;">💜 VIBER</a>
-                        </div>
-                    </div>
-                    <div class="priority-box">
-                        <div style="background:#f59e0b; padding:15px; border-radius:28px; color:white; text-align:center; min-height:160px;">
-                <small style="text-transform:uppercase; font-size:10px; display:block; margin-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:5px;">🏔️ დასავლეთი</small>
-                
-                <div style="background:rgba(255,255,255,0.15); padding:10px; border-radius:18px; margin-bottom:8px;">
-                    <b style="font-size:13px; display:block;">ზაალ გვეტაძე</b>
-                    <span style="font-size:12px; display:block; margin-bottom:5px;">568230917</span>
-                    <div style="display:flex; gap:3px; justify-content:center;">
-                        <a href="tel:568230917" style="background:#16a34a; color:white; text-decoration:none; padding:4px 8px; border-radius:8px; font-size:10px; font-weight:900;">📞 CALL</a>
-                        <a href="viber://chat?number=%2B995568230917" style="background:#7360f2; color:white; text-decoration:none; padding:4px 8px; border-radius:8px; font-size:10px; font-weight:900;">💜 VIBER</a>
-                    </div>
-                </div>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><style>
+            body{font-family:system-ui; background:#f8fafc; display:flex; justify-content:center; padding:20px;}
+            #canvas{width:100%; max-width:720px; background:white; border-radius:45px; padding:35px; box-shadow:0 30px 60px rgba(0,0,0,0.1);}
+            .live-banner{background:#000000; color:white; border-radius:35px; text-align:center; padding:35px; margin-bottom:25px; border:5px solid #ef4444; animation: p 3s infinite ease-in-out;}
+            @keyframes p { 0%{transform:scale(1); box-shadow:0 0 0 0 #ef4444b3;} 50%{transform:scale(1.01); box-shadow:0 0 20px 5px #ef444466;} 100%{transform:scale(1);} }
+            .big-date{font-size:48px; font-weight:900; color:#ff0000; margin-bottom:10px;}
+            .live-name{font-size:28px; font-weight:800; color:#28f000;}
+            .priority-box{display:grid; grid-template-columns:1fr 1fr 1fr; gap:15px; margin-bottom:20px;}
+            .p-card{background:#475569; padding:15px; border-radius:28px; color:white; text-align:center; font-size:11px;}
+            .p-info{background:rgba(255,255,255,0.1); padding:10px 5px; border-radius:18px; margin-bottom:8px;}
+            .row{padding:15px 20px; border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:center;}
+            .btn-m{text-decoration:none; padding:8px 15px; border-radius:10px; font-weight:800; display:inline-block; margin:2px; background:#16a34a; color:white; font-size:10px;}
+            .btn-viber{background:#7360f2 !important;}
+        </style></head><body><div id="canvas">
+        <div id="liveBanner" class="live-banner" style="background: rgb(0, 0, 0); border-color: rgb(239, 68, 68);">
+            <div id="liveD" class="big-date" style="color: rgb(255, 0, 0);">18 თებერვალი</div>
+            <div id="liveN" class="live-name" style="color: rgb(40, 240, 0);">ალიკა ყალიჩავა</div>
+            <a id="liveP" href="tel:551688899" style="font-size: 32px; color: rgb(255, 0, 0); font-weight: 900; text-decoration: none; display: block; margin: 10px 0px;">551688899</a>
+            <div style="display:flex; gap:15px; justify-content:center; margin-top:10px;">
+                <a id="liveC" href="tel:551688899" class="btn-m btn-call" style="width:120px; padding:12px;">📞 CALL</a>
+                <a id="liveV" href="viber://chat?number=%2B995551688899" class="btn-m btn-viber" style="width:120px; padding:12px;">💜 VIBER</a>
             </div>
-                        <div style="background:#ea580c; padding:15px; border-radius:28px; color:white; text-align:center; min-height:160px;">
-                <small style="text-transform:uppercase; font-size:10px; display:block; margin-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:5px;">☀️ აღმოსავლეთი</small>
-                
-                <div style="background:rgba(255,255,255,0.15); padding:10px; border-radius:18px; margin-bottom:8px;">
-                    <b style="font-size:13px; display:block;">თემო გელაშვილი</b>
-                    <span style="font-size:12px; display:block; margin-bottom:5px;">577698890</span>
-                    <div style="display:flex; gap:3px; justify-content:center;">
-                        <a href="tel:577698890" style="background:#16a34a; color:white; text-decoration:none; padding:4px 8px; border-radius:8px; font-size:10px; font-weight:900;">📞 CALL</a>
-                        <a href="viber://chat?number=%2B995577698890" style="background:#7360f2; color:white; text-decoration:none; padding:4px 8px; border-radius:8px; font-size:10px; font-weight:900;">💜 VIBER</a>
+        </div>
+
+        <div class="priority-box">
+            <div id="wBox" class="p-card"><small style="text-transform:uppercase; font-size:10px; display:block; margin-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:5px;">🏔️ დასავლეთი</small>
+                <div class="p-info">
+                    <b>ზაალ გვეტაძე</b><br>568230917
+                    <div style="margin-top:5px;">
+                        <a href="tel:568230917" class="btn-m btn-call">📞</a>
+                        <a href="viber://chat?number=%2B995568230917" class="btn-m btn-viber">💜</a>
+                    </div>
+                </div></div>
+            <div id="eBox" class="p-card"><small style="text-transform:uppercase; font-size:10px; display:block; margin-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:5px;">☀️ აღმოსავლეთი</small>
+                <div class="p-info">
+                    <b>თემო გელაშვილი</b><br>577698890
+                    <div style="margin-top:5px;">
+                        <a href="tel:577698890" class="btn-m btn-call">📞</a>
+                        <a href="viber://chat?number=%2B995577698890" class="btn-m btn-viber">💜</a>
                     </div>
                 </div>
-                <div style="background:rgba(255,255,255,0.15); padding:10px; border-radius:18px; margin-bottom:8px;">
-                    <b style="font-size:13px; display:block;">უჩა მჭედლიშვილი</b>
-                    <span style="font-size:12px; display:block; margin-bottom:5px;">599470033</span>
-                    <div style="display:flex; gap:3px; justify-content:center;">
-                        <a href="tel:599470033" style="background:#16a34a; color:white; text-decoration:none; padding:4px 8px; border-radius:8px; font-size:10px; font-weight:900;">📞 CALL</a>
-                        <a href="viber://chat?number=%2B995599470033" style="background:#7360f2; color:white; text-decoration:none; padding:4px 8px; border-radius:8px; font-size:10px; font-weight:900;">💜 VIBER</a>
+                <div class="p-info">
+                    <b>უჩა მჭედლიშვილი</b><br>599470033
+                    <div style="margin-top:5px;">
+                        <a href="tel:599470033" class="btn-m btn-call">📞</a>
+                        <a href="viber://chat?number=%2B995599470033" class="btn-m btn-viber">💜</a>
                     </div>
-                </div>
-            </div>
-                        <div style="background:#334155; padding:15px; border-radius:28px; color:white; text-align:center; min-height:160px; border:2px dashed rgba(255,255,255,0.3)">
-                            <small style="text-transform:uppercase; font-size:10px; display:block; margin-bottom:10px;">📞 ქოლცენტრი</small>
-                            <b style="font-size:24px; margin:15px 0; display:block;">8888</b>
-                            <span style="font-size:11px; font-weight:800;">09:00 - 18:00</span>
-                        </div>
-                    </div>
-                    
-                    <div id="scheduleBody">
-            <div class="row" style="padding:20px; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
-                <div><b>18 თებერვალი</b><br><small style="color:#666; font-size:11px; font-weight:bold;">18:00 - 06:00</small></div>
+                </div></div>
+            <div id="cBox" class="p-card" style="background:#334155;"><small style="text-transform:uppercase; font-size:10px;">📞 ქოლცენტრი</small><b style="font-size:24px; margin:15px 0; display:block;">8888</b><small>09:00 - 18:00</small></div>
+        </div>
+
+        <div id="noteBox" style="display: none; padding: 20px; border-radius: 25px; border-left: 8px solid rgb(239, 68, 68); margin-bottom: 25px; background: rgb(241, 245, 249); font-weight: 800; font-size: 16px; border-top-color: rgb(239, 68, 68); border-right-color: rgb(239, 68, 68); border-bottom-color: rgb(239, 68, 68);"></div>
+        <div id="scheduleBody"><div class="row today-row">
+                <div><b>18 თებერვალი</b><br><small style="font-size:11px; color:#64748b;">18:00 - 06:00</small></div>
                 <div style="text-align:right">
-                    <b style="font-size:16px; color:#0f172a;">ალიკა ყალიჩავა</b><br>
-                    <span style="color:#0ea5e9; font-weight:900; font-size:14px; display:block; margin:4px 0;">551688899</span>
-                    <div style="display:flex; gap:5px; justify-content:flex-end;">
-                        <a href="tel:551688899" style="background:#16a34a; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">📞 CALL</a>
-                        <a href="viber://chat?number=%2B995551688899" style="background:#7360f2; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">💜 VIBER</a>
+                    <b style="font-size:16px; display:block; color:#0f172a; margin-bottom:4px;">ალიკა ყალიჩავა</b>
+                    <div style="font-weight:900; color:#334155; font-size:14px; margin-bottom:5px;">551688899</div>
+                    <div style="display:flex; gap:3px; justify-content:flex-end;">
+                        <a href="tel:551688899" class="btn-m btn-call">📞 CALL</a>
+                        <a href="viber://chat?number=%2B995551688899" class="btn-m btn-viber">💜 VIBER</a>
                     </div>
                 </div>
-            </div>
-            <div class="row" style="padding:20px; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
-                <div><b>19 თებერვალი</b><br><small style="color:#666; font-size:11px; font-weight:bold;">18:00 - 06:00</small></div>
+            </div><div class="row ">
+                <div><b>19 თებერვალი</b><br><small style="font-size:11px; color:#64748b;">18:00 - 06:00</small></div>
                 <div style="text-align:right">
-                    <b style="font-size:16px; color:#0f172a;">გუგა ბალანჩივაძე</b><br>
-                    <span style="color:#0ea5e9; font-weight:900; font-size:14px; display:block; margin:4px 0;">577978792</span>
-                    <div style="display:flex; gap:5px; justify-content:flex-end;">
-                        <a href="tel:577978792" style="background:#16a34a; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">📞 CALL</a>
-                        <a href="viber://chat?number=%2B995577978792" style="background:#7360f2; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">💜 VIBER</a>
+                    <b style="font-size:16px; display:block; color:#0f172a; margin-bottom:4px;">გუგა ბალანჩივაძე</b>
+                    <div style="font-weight:900; color:#334155; font-size:14px; margin-bottom:5px;">577978792</div>
+                    <div style="display:flex; gap:3px; justify-content:flex-end;">
+                        <a href="tel:577978792" class="btn-m btn-call">📞 CALL</a>
+                        <a href="viber://chat?number=%2B995577978792" class="btn-m btn-viber">💜 VIBER</a>
                     </div>
                 </div>
-            </div>
-            <div class="row" style="padding:20px; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
-                <div><b>20 თებერვალი</b><br><small style="color:#666; font-size:11px; font-weight:bold;">18:00 - 06:00</small></div>
+            </div><div class="row ">
+                <div><b>20 თებერვალი</b><br><small style="font-size:11px; color:#64748b;">18:00 - 06:00</small></div>
                 <div style="text-align:right">
-                    <b style="font-size:16px; color:#0f172a;">გიორგი ლომიძე</b><br>
-                    <span style="color:#0ea5e9; font-weight:900; font-size:14px; display:block; margin:4px 0;">555558222</span>
-                    <div style="display:flex; gap:5px; justify-content:flex-end;">
-                        <a href="tel:555558222" style="background:#16a34a; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">📞 CALL</a>
-                        <a href="viber://chat?number=%2B995555558222" style="background:#7360f2; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">💜 VIBER</a>
+                    <b style="font-size:16px; display:block; color:#0f172a; margin-bottom:4px;">გიორგი ლომიძე</b>
+                    <div style="font-weight:900; color:#334155; font-size:14px; margin-bottom:5px;">555558222</div>
+                    <div style="display:flex; gap:3px; justify-content:flex-end;">
+                        <a href="tel:555558222" class="btn-m btn-call">📞 CALL</a>
+                        <a href="viber://chat?number=%2B995555558222" class="btn-m btn-viber">💜 VIBER</a>
                     </div>
                 </div>
-            </div>
-            <div class="row" style="padding:20px; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
-                <div><b>21 თებერვალი</b><br><small style="color:#666; font-size:11px; font-weight:bold;">06:00 - 06:00</small></div>
+            </div><div class="row ">
+                <div><b>21 თებერვალი</b><br><small style="font-size:11px; color:#64748b;">06:00 - 06:00</small></div>
                 <div style="text-align:right">
-                    <b style="font-size:16px; color:#0f172a;">გუგა ბალანჩივაძე</b><br>
-                    <span style="color:#0ea5e9; font-weight:900; font-size:14px; display:block; margin:4px 0;">577978792</span>
-                    <div style="display:flex; gap:5px; justify-content:flex-end;">
-                        <a href="tel:577978792" style="background:#16a34a; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">📞 CALL</a>
-                        <a href="viber://chat?number=%2B995577978792" style="background:#7360f2; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">💜 VIBER</a>
+                    <b style="font-size:16px; display:block; color:#0f172a; margin-bottom:4px;">გუგა ბალანჩივაძე</b>
+                    <div style="font-weight:900; color:#334155; font-size:14px; margin-bottom:5px;">577978792</div>
+                    <div style="display:flex; gap:3px; justify-content:flex-end;">
+                        <a href="tel:577978792" class="btn-m btn-call">📞 CALL</a>
+                        <a href="viber://chat?number=%2B995577978792" class="btn-m btn-viber">💜 VIBER</a>
                     </div>
                 </div>
-            </div>
-            <div class="row" style="padding:20px; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
-                <div><b>22 თებერვალი</b><br><small style="color:#666; font-size:11px; font-weight:bold;">06:00 - 06:00</small></div>
+            </div><div class="row ">
+                <div><b>22 თებერვალი</b><br><small style="font-size:11px; color:#64748b;">06:00 - 06:00</small></div>
                 <div style="text-align:right">
-                    <b style="font-size:16px; color:#0f172a;">შალვა გაგნიძე</b><br>
-                    <span style="color:#0ea5e9; font-weight:900; font-size:14px; display:block; margin:4px 0;">551770200</span>
-                    <div style="display:flex; gap:5px; justify-content:flex-end;">
-                        <a href="tel:551770200" style="background:#16a34a; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">📞 CALL</a>
-                        <a href="viber://chat?number=%2B995551770200" style="background:#7360f2; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">💜 VIBER</a>
+                    <b style="font-size:16px; display:block; color:#0f172a; margin-bottom:4px;">შალვა გაგნიძე</b>
+                    <div style="font-weight:900; color:#334155; font-size:14px; margin-bottom:5px;">551770200</div>
+                    <div style="display:flex; gap:3px; justify-content:flex-end;">
+                        <a href="tel:551770200" class="btn-m btn-call">📞 CALL</a>
+                        <a href="viber://chat?number=%2B995551770200" class="btn-m btn-viber">💜 VIBER</a>
                     </div>
                 </div>
-            </div>
-            <div class="row" style="padding:20px; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
-                <div><b>23 თებერვალი</b><br><small style="color:#666; font-size:11px; font-weight:bold;">18:00 - 06:00</small></div>
+            </div><div class="row ">
+                <div><b>23 თებერვალი</b><br><small style="font-size:11px; color:#64748b;">18:00 - 06:00</small></div>
                 <div style="text-align:right">
-                    <b style="font-size:16px; color:#0f172a;">ვასილ გოგალაძე</b><br>
-                    <span style="color:#0ea5e9; font-weight:900; font-size:14px; display:block; margin:4px 0;">557949827</span>
-                    <div style="display:flex; gap:5px; justify-content:flex-end;">
-                        <a href="tel:557949827" style="background:#16a34a; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">📞 CALL</a>
-                        <a href="viber://chat?number=%2B995557949827" style="background:#7360f2; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">💜 VIBER</a>
+                    <b style="font-size:16px; display:block; color:#0f172a; margin-bottom:4px;">ვასილ გოგალაძე</b>
+                    <div style="font-weight:900; color:#334155; font-size:14px; margin-bottom:5px;">557949827</div>
+                    <div style="display:flex; gap:3px; justify-content:flex-end;">
+                        <a href="tel:557949827" class="btn-m btn-call">📞 CALL</a>
+                        <a href="viber://chat?number=%2B995557949827" class="btn-m btn-viber">💜 VIBER</a>
                     </div>
                 </div>
-            </div>
-            <div class="row" style="padding:20px; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
-                <div><b>24 თებერვალი</b><br><small style="color:#666; font-size:11px; font-weight:bold;">18:00 - 06:00</small></div>
+            </div><div class="row ">
+                <div><b>24 თებერვალი</b><br><small style="font-size:11px; color:#64748b;">18:00 - 06:00</small></div>
                 <div style="text-align:right">
-                    <b style="font-size:16px; color:#0f172a;">ვასილ გოგალაძე</b><br>
-                    <span style="color:#0ea5e9; font-weight:900; font-size:14px; display:block; margin:4px 0;">557949827</span>
-                    <div style="display:flex; gap:5px; justify-content:flex-end;">
-                        <a href="tel:557949827" style="background:#16a34a; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">📞 CALL</a>
-                        <a href="viber://chat?number=%2B995557949827" style="background:#7360f2; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">💜 VIBER</a>
+                    <b style="font-size:16px; display:block; color:#0f172a; margin-bottom:4px;">გიორგი ლომიძე</b>
+                    <div style="font-weight:900; color:#334155; font-size:14px; margin-bottom:5px;">555558222</div>
+                    <div style="display:flex; gap:3px; justify-content:flex-end;">
+                        <a href="tel:555558222" class="btn-m btn-call">📞 CALL</a>
+                        <a href="viber://chat?number=%2B995555558222" class="btn-m btn-viber">💜 VIBER</a>
                     </div>
                 </div>
-            </div>
-            <div class="row" style="padding:20px; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
-                <div><b>25 თებერვალი</b><br><small style="color:#666; font-size:11px; font-weight:bold;">18:00 - 06:00</small></div>
+            </div><div class="row ">
+                <div><b>25 თებერვალი</b><br><small style="font-size:11px; color:#64748b;">18:00 - 06:00</small></div>
                 <div style="text-align:right">
-                    <b style="font-size:16px; color:#0f172a;">გიორგი ლომიძე</b><br>
-                    <span style="color:#0ea5e9; font-weight:900; font-size:14px; display:block; margin:4px 0;">555558222</span>
-                    <div style="display:flex; gap:5px; justify-content:flex-end;">
-                        <a href="tel:555558222" style="background:#16a34a; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">📞 CALL</a>
-                        <a href="viber://chat?number=%2B995555558222" style="background:#7360f2; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">💜 VIBER</a>
+                    <b style="font-size:16px; display:block; color:#0f172a; margin-bottom:4px;">გიორგი ლომიძე</b>
+                    <div style="font-weight:900; color:#334155; font-size:14px; margin-bottom:5px;">555558222</div>
+                    <div style="display:flex; gap:3px; justify-content:flex-end;">
+                        <a href="tel:555558222" class="btn-m btn-call">📞 CALL</a>
+                        <a href="viber://chat?number=%2B995555558222" class="btn-m btn-viber">💜 VIBER</a>
                     </div>
                 </div>
-            </div>
-            <div class="row" style="padding:20px; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
-                <div><b>26 თებერვალი</b><br><small style="color:#666; font-size:11px; font-weight:bold;">18:00 - 06:00</small></div>
+            </div><div class="row ">
+                <div><b>26 თებერვალი</b><br><small style="font-size:11px; color:#64748b;">18:00 - 06:00</small></div>
                 <div style="text-align:right">
-                    <b style="font-size:16px; color:#0f172a;">გიორგი ბოჭორიშვილი</b><br>
-                    <span style="color:#0ea5e9; font-weight:900; font-size:14px; display:block; margin:4px 0;">591927831</span>
-                    <div style="display:flex; gap:5px; justify-content:flex-end;">
-                        <a href="tel:591927831" style="background:#16a34a; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">📞 CALL</a>
-                        <a href="viber://chat?number=%2B995591927831" style="background:#7360f2; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">💜 VIBER</a>
+                    <b style="font-size:16px; display:block; color:#0f172a; margin-bottom:4px;">გიორგი ბოჭორიშვილი</b>
+                    <div style="font-weight:900; color:#334155; font-size:14px; margin-bottom:5px;">591927831</div>
+                    <div style="display:flex; gap:3px; justify-content:flex-end;">
+                        <a href="tel:591927831" class="btn-m btn-call">📞 CALL</a>
+                        <a href="viber://chat?number=%2B995591927831" class="btn-m btn-viber">💜 VIBER</a>
                     </div>
                 </div>
-            </div>
-            <div class="row" style="padding:20px; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
-                <div><b>27 თებერვალი</b><br><small style="color:#666; font-size:11px; font-weight:bold;">18:00 - 06:00</small></div>
+            </div><div class="row ">
+                <div><b>27 თებერვალი</b><br><small style="font-size:11px; color:#64748b;">18:00 - 06:00</small></div>
                 <div style="text-align:right">
-                    <b style="font-size:16px; color:#0f172a;">ბექა ტალახაძე</b><br>
-                    <span style="color:#0ea5e9; font-weight:900; font-size:14px; display:block; margin:4px 0;">551982772</span>
-                    <div style="display:flex; gap:5px; justify-content:flex-end;">
-                        <a href="tel:551982772" style="background:#16a34a; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">📞 CALL</a>
-                        <a href="viber://chat?number=%2B995551982772" style="background:#7360f2; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">💜 VIBER</a>
+                    <b style="font-size:16px; display:block; color:#0f172a; margin-bottom:4px;">ბექა ტალახაძე</b>
+                    <div style="font-weight:900; color:#334155; font-size:14px; margin-bottom:5px;">551982772</div>
+                    <div style="display:flex; gap:3px; justify-content:flex-end;">
+                        <a href="tel:551982772" class="btn-m btn-call">📞 CALL</a>
+                        <a href="viber://chat?number=%2B995551982772" class="btn-m btn-viber">💜 VIBER</a>
                     </div>
                 </div>
-            </div>
-            <div class="row" style="padding:20px; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
-                <div><b>28 თებერვალი</b><br><small style="color:#666; font-size:11px; font-weight:bold;">06:00 - 06:00</small></div>
+            </div><div class="row ">
+                <div><b>28 თებერვალი</b><br><small style="font-size:11px; color:#64748b;">06:00 - 06:00</small></div>
                 <div style="text-align:right">
-                    <b style="font-size:16px; color:#0f172a;">ალიკა ყალიჩავა</b><br>
-                    <span style="color:#0ea5e9; font-weight:900; font-size:14px; display:block; margin:4px 0;">551688899</span>
-                    <div style="display:flex; gap:5px; justify-content:flex-end;">
-                        <a href="tel:551688899" style="background:#16a34a; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">📞 CALL</a>
-                        <a href="viber://chat?number=%2B995551688899" style="background:#7360f2; color:white; text-decoration:none; padding:6px 12px; border-radius:10px; font-size:11px; font-weight:900; display:inline-block;">💜 VIBER</a>
+                    <b style="font-size:16px; display:block; color:#0f172a; margin-bottom:4px;">ალიკა ყალიჩავა</b>
+                    <div style="font-weight:900; color:#334155; font-size:14px; margin-bottom:5px;">551688899</div>
+                    <div style="display:flex; gap:3px; justify-content:flex-end;">
+                        <a href="tel:551688899" class="btn-m btn-call">📞 CALL</a>
+                        <a href="viber://chat?number=%2B995551688899" class="btn-m btn-viber">💜 VIBER</a>
                     </div>
                 </div>
             </div></div>
-                </div>
-            </body></html>
+    </div></body></html>
